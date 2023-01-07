@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
 
+        val clearButton: Button = findViewById(R.id.clear_button)
+        clearButton.setOnClickListener { clearDice() }
         diceImage = findViewById(R.id.dice_image)
         diceImage2 = findViewById(R.id.dice_image2)
     }
@@ -37,5 +39,12 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
+    }
+    private fun clearDice() {
+//        Toast.makeText(this, "Dice Rolled",
+//            Toast.LENGTH_SHORT).show()
+
+        diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage2.setImageResource(R.drawable.empty_dice)
     }
 }
